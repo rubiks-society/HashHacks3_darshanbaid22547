@@ -11,5 +11,12 @@
     "START_QUESTION-total": 1,
     "START_QUESTION-1": "Ok! Lets begin with the first question.",
 
-    "BYE": "Good bye!"
+    "WHATS_THIS_IMAGE-total": 4,
+    "WHATS_THIS_IMAGE-1": "What's this image?",
+    "WHATS_THIS_IMAGE-2": "What's in this image?",
+    "WHATS_THIS_IMAGE-3": "What are you seeing?",
+    "WHATS_THIS_IMAGE-4": "What's this?",
+
+    "BYE": "Good bye!",
+    "img-alt": "What's this image?"
 }
