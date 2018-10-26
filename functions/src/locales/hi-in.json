@@ -5,7 +5,6 @@
     "ordinal-4": "चौथा",
     "ordinal-5": "पांचवां",
 
-
     "FIRST_WELCOME-total": 3,
     "FIRST_WELCOME-1": "Hey! This is doc",
     "FIRST_WELCOME-2": "This is",
@@ -16,7 +15,27 @@
     "WELCOME_BACK-2": "WELCOME BACK",
 
     "START_QUESTION-total": 1,
-    "START_QUESTION-1": "Ok! Lets begin with the first question.",
+    "START_QUESTION-1": "तो चलिये शुरू करते है पहले सवाल से!",
+
+    "WHATS_THIS_IMAGE-total": 4,
+    "WHATS_THIS_IMAGE-1": "चित्र में नंबर क्या है ?",
+    "WHATS_THIS_IMAGE-2": "छवि में संख्या क्या है?",
+    "WHATS_THIS_IMAGE-3": "इस चित्र में संख्या क्या है?",
+    "WHATS_THIS_IMAGE-4": "इस छवि में नंबर क्या है?",
+
+    "JOKE_ANYONE-total": 2,
+    "JOKE_ANYONE-1": "अरे यह तो कोई भी पहचान लेता",
+    "JOKE_ANYONE-2": "इसमें क्या बड़ी बात है ये तोह कोई भी कर लेगा",
+
+    "JOKE_BYE": 2,
+    "JOKE_BYE-1": "I'll call it goodbye.",
+    "JOKE_BYE-2": "Call me anytime you need me.",
+
+    "YOU_HAVE_RED_GREEN-total": 1,
+    "YOU_HAVE_RED_GREEN-1": "आपको लाल हरा रंग का अंधापन हो सकता है।",
+
+    "YOU_HAVE_TOTAL-total": 1,
+    "YOU_HAVE_TOTAL-1": "आपको कुल रंग अंधापन हो सकता है।",
 
     "BYE": "अलविदा!"
 }
