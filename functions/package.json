@@ -11,6 +11,8 @@
   },
   "main": "lib/index.js",
   "dependencies": {
+    "@sfeir/actions-on-google-i18n": "^2.1.0",
+    "actions-on-google": "^2.4.1",
     "firebase-admin": "~6.0.0",
     "firebase-functions": "^2.0.3"
   },
