@@ -1,0 +1,21 @@
+{
+    "ordinal-1": "premier",
+    "ordinal-2": "seconde",
+    "ordinal-3": "troisième",
+    "ordinal-4": "Quatrième",
+    "ordinal-5": "cinquième",
+
+    "FIRST_WELCOME-total": 3,
+    "FIRST_WELCOME-1": "Hey! This is Color doc",
+    "FIRST_WELCOME-2": "This is",
+    "FIRST_WELCOME-3": "This is",
+
+    "WELCOME_BACK-total": 2,
+    "WELCOME_BACK-1": "NOUS SALUONS LE RETOUR",
+    "WELCOME_BACK-2": "WELCOME BACK",
+
+    "START_QUESTION-total": 1,
+    "START_QUESTION-1": "D'accord! Commençons par la première question.",
+
+    "BYE": "Au revoir!"
+}
