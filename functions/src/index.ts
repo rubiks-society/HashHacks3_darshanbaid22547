@@ -16,7 +16,7 @@ const questions = {
         "question-type": "image",
         "image-source": "https://www.colour-blindness.com/CBTests/ishihara/Plate1.gif",
         "plate-code": 1,
-        "choices": [12,24,CANT_SAY],
+        "choices": ["12","24","CANT_SAY"],
         "scores": {
             "12": {
                 "creepy": 0,
@@ -33,7 +33,7 @@ const questions = {
         "question-type": "image",
         "image-source": "https://www.colour-blindness.com/CBTests/ishihara/Plate2.gif",
         "plate-code": 2,
-        "choices": [8,3,CANT_SAY],
+        "choices": ["8","3","CANT_SAY"],
         "scores": {
             "8": {
                 "normal": 0.2
@@ -147,6 +147,7 @@ function tellAnswer(conv, answer?) {
         conv.user.storage['quiz']['scores']['red-green'] += (scores['red-green'] | 0);
         conv.user.storage['quiz']['scores']['total'] += (scores['total'] | 0);
     }
+    console.log(conv.user.storage['quiz']);
     if (conv.user.storage['quiz']['scores']['creepy'] > 0.5) {
         // The user is joking, lets end.
         conv.close(randomChoice("JOKE_ANYONE",conv),randomChoice("JOKE_BYE",conv));
@@ -157,6 +158,9 @@ function tellAnswer(conv, answer?) {
     } else if (conv.user.storage['quiz']['scores']['total'] > 0.7) {
         // The user probably has total color blindnesss
         conv.close(randomChoice("YOU_HAVE_TOTAL", conv));
+    } else if (conv.user.storage['quiz']['scores']['normal'] > 0.7) {
+        // The user probably is normal
+        conv.close(randomChoice("YOU_ARE_NORMAL", conv));
     } else if (conv.user.storage['quiz']['red-green'] > conv.user.storage['quiz']['total']) {
         // Probablity of having red-green, so we'll ask a more specific question
         conv.contexts.set('image_question',5);
