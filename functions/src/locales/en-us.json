@@ -34,6 +34,10 @@
     "YOU_HAVE_RED_GREEN-total": 1,
     "YOU_HAVE_RED_GREEN-1": "You might have red-green color blindness.",
 
+    "YOU_HAVE_TOTAL-total": 1,
+    "YOU_HAVE_TOTAL-1": "You might have total color blindness.",
+
+
     "BYE": "Good bye!",
     "img-alt": "What's this image?"
 }

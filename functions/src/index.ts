@@ -102,8 +102,8 @@ function tellAnswer(conv, answer?) {
         return;
     } else if (conv.user.storage['quiz']['scores']['red-green'] > 0.7) {
         conv.close(randomChoice("YOU_HAVE_RED_GREEN", conv));
-    } else {
-        conv.ask("we'll pass");
+    } else if (conv.user.storage['quiz']['scores']['total'] > 0.7) {
+        conv.close(randomChoice("YOU_HAVE_TOTAL", conv));
     }
 }
 
