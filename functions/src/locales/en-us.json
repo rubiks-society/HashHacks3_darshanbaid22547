@@ -6,13 +6,13 @@
     "ordinal-5": "fifth",
 
     "FIRST_WELCOME-total": 3,
-    "FIRST_WELCOME-1": "Hey! This is Color doc",
-    "FIRST_WELCOME-2": "This is",
-    "FIRST_WELCOME-3": "This is",
+    "FIRST_WELCOME-1": "Hey! This is Colour doctor. I can tell you about color blindness and we could even do a quick test.",
+    "FIRST_WELCOME-2": "Welcome to your new doc! I specialize in colour blindness and I can perform a real quick color-blindness test.",
+    "FIRST_WELCOME-3": "This is your Colour doctor and I am here to dance with you, I mean help you out by doing a quick color blindness test.",
 
     "WELCOME_BACK-total": 2,
-    "WELCOME_BACK-1": "WELCOME BACK",
-    "WELCOME_BACK-2": "WELCOME BACK",
+    "WELCOME_BACK-1": "Welcome back to your doc. Wanna do another test today?",
+    "WELCOME_BACK-2": "It's great to see you again, let's roll another test! Shall we?",
 
     "START_QUESTION-total": 1,
     "START_QUESTION-1": "Ok! Lets begin with the first question.",
