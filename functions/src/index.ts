@@ -105,6 +105,7 @@ function randomChoice(s: string,conv, ex?: object) {
 }
 
 function askImage(q: string, conv) {
+    console.log(`Showing image ${q}`);
     conv.ask(new BasicCard({
         image: new Image({
             url: questions[q]['image-source'],
@@ -147,6 +148,7 @@ function tellAnswer(conv, answer?) {
         conv.user.storage['quiz']['scores']['creepy'] += (scores['creepy'] | 0);
         conv.user.storage['quiz']['scores']['red-green'] += (scores['red-green'] | 0);
         conv.user.storage['quiz']['scores']['total'] += (scores['total'] | 0);
+        conv.user.storage['quiz']['scores']['normal'] += (scores['normal'] | 0);
     }
     console.log(conv.user.storage['quiz']);
     conv.user.storage['quiz']['total_questions'] += 1;
