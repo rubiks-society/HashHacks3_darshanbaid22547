@@ -13,5 +13,9 @@ Color Blindness is rated as a **Very Common** disease in India. [Source](https:/
 
 ![Tritanopia Vision](http://www.colourblindawareness.org/wp-content/themes/outreach/images/slider/whatIs/what-is_t.jpg)
 
+![Normal Vision](http://www.colourblindawareness.org/wp-content/themes/outreach/images/slider/whatIs/what-is.jpg) | ![Tritanopia Vision](http://www.colourblindawareness.org/wp-content/themes/outreach/images/slider/whatIs/what-is_t.jpg)
+------------ | -------------
+Normal Vision | Tritanopia Vision
 
-Our aim is to create a simple to use and accessible voice app that could help a person understand if she or he might have color blindness. The app uses Isihara Plates and Google Assistant's platform to ask end-user if he or she has Color Blindness. The app is available in English, Hindi (proposed) Portugese and French, making it available to a wide user base.
+
+Our aim is to create a simple to use and accessible voice app that could help a person understand if she or he might have color blindness. The app uses Isihara Plates and Google Assistant's platform to ask end-user if he or she has Color Blindness. The app would be available in English, Hindi (proposed) Portuguese, German and French, making it available to a wide user base.
