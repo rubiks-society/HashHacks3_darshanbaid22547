@@ -1,3 +1,22 @@
 {
-    "BYE": "shubh ratri!"
+    "ordinal-1": "प्रथम",
+    "ordinal-2": "दूसरा",
+    "ordinal-3": "तीसरा",
+    "ordinal-4": "चौथा",
+    "ordinal-5": "पांचवां",
+
+
+    "FIRST_WELCOME-total": 3,
+    "FIRST_WELCOME-1": "Hey! This is doc",
+    "FIRST_WELCOME-2": "This is",
+    "FIRST_WELCOME-3": "This is",
+
+    "WELCOME_BACK-total": 2,
+    "WELCOME_BACK-1": "WELCOME BACK",
+    "WELCOME_BACK-2": "WELCOME BACK",
+
+    "START_QUESTION-total": 1,
+    "START_QUESTION-1": "Ok! Lets begin with the first question.",
+
+    "BYE": "अलविदा!"
 }

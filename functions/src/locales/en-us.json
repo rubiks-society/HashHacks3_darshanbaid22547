@@ -1,6 +1,12 @@
 {
+    "ordinal-1": "first",
+    "ordinal-2": "second",
+    "ordinal-3": "third",
+    "ordinal-4": "fourth",
+    "ordinal-5": "fifth",
+
     "FIRST_WELCOME-total": 3,
-    "FIRST_WELCOME-1": "Hey! This is doc",
+    "FIRST_WELCOME-1": "Hey! This is Color doc",
     "FIRST_WELCOME-2": "This is",
     "FIRST_WELCOME-3": "This is",
 
