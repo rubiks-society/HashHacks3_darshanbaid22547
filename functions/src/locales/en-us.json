@@ -17,6 +17,17 @@
     "WHATS_THIS_IMAGE-3": "What are you seeing?",
     "WHATS_THIS_IMAGE-4": "What's this?",
 
+    "JOKE_ANYONE-total": 2,
+    "JOKE_ANYONE-1": "Well, that could have been guessed by anyone.",
+    "JOKE_ANYONE-2": "Looks like you are joking with me.",
+
+    "JOKE_BYE": 2,
+    "JOKE_BYE-1": "I'll call it goodbye.",
+    "JOKE_BYE-2": "Call me anytime you need me.",
+
+    "YOU_HAVE_RED_GREEN-total": 1,
+    "YOU_HAVE_RED_GREEN-1": "You might have red-green color blindness.",
+
     "BYE": "Good bye!",
     "img-alt": "What's this image?"
 }

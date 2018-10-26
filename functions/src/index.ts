@@ -82,9 +82,29 @@ function askQuestion(conv) {
 
 function tellAnswer(conv, answer?) {
     const q = questions[conv.user.storage['quiz']['last_question']];
-    // if (q['question-type'] === 'image') {
-    //     if ()
-    // }
+    if (q['question-type'] === 'image') {
+        let scores = {};
+        if (q['scores'][`${answer}`] !== undefined) {
+            // such an answer exist
+            scores = q['scores'][`${answer}`];
+
+        } else {
+            // default
+            scores = q['scores']['default'];
+        }
+        conv.user.storage['quiz']['scores']['creepy'] += (scores['creepy'] | 0);
+        conv.user.storage['quiz']['scores']['red-green'] += (scores['red-green'] | 0);
+        conv.user.storage['quiz']['scores']['total'] += (scores['total'] | 0);
+    }
+    if (conv.user.storage['quiz']['scores']['creepy'] > 0.5) {
+        // The user is joking, lets end.
+        conv.close(randomChoice("JOKE_ANYONE",conv),randomChoice("JOKE_BYE",conv));
+        return;
+    } else if (conv.user.storage['quiz']['scores']['red-green'] > 0.7) {
+        conv.close(randomChoice("YOU_HAVE_RED_GREEN", conv));
+    } else {
+        conv.ask("we'll pass");
+    }
 }
 
 
@@ -100,6 +120,11 @@ app.intent("Default Welcome Intent", (conv) => {
         conv.user.storage['quiz'] = {};
         isNewUser = false;
     }
+    conv.user.storage['quiz']['scores'] = {
+        "creepy": 0,
+        "red-green": 0,
+        "total": 0
+    };
 
     if (isNewUser) {
         conv.ask(randomChoice("FIRST_WELCOME", conv));
