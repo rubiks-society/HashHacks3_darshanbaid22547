@@ -124,7 +124,7 @@ function askQuestion(conv) {
             "red-green": 0,
             "total": 0
         };
-        conv.user.storage['quiz']['total_questions'] = 1;
+        conv.user.storage['quiz']['total_questions'] = 0;
         conv.ask(randomChoice("WHATS_THIS_IMAGE", conv));
         askImage('q1',conv);
         
@@ -149,6 +149,7 @@ function tellAnswer(conv, answer?) {
         conv.user.storage['quiz']['scores']['total'] += (scores['total'] | 0);
     }
     console.log(conv.user.storage['quiz']);
+    conv.user.storage['quiz']['total_questions'] += 1;
     if (conv.user.storage['quiz']['scores']['creepy'] > 0.5) {
         // The user is joking, lets end.
         conv.close(randomChoice("JOKE_ANYONE",conv),randomChoice("JOKE_BYE",conv));
@@ -162,6 +163,15 @@ function tellAnswer(conv, answer?) {
     } else if (conv.user.storage['quiz']['scores']['normal'] > 0.7) {
         // The user probably is normal
         conv.close(randomChoice("YOU_ARE_NORMAL", conv));
+    } else if (conv.user.storage['quiz']['total_questions'] > 5) {
+        if (conv.user.storage['quiz']['scores']['normal'] > conv.user.storage['quiz']['scores']['red-green'] && 
+        conv.user.storage['quiz']['scores']['normal'] > conv.user.storage['quiz']['scores']['total'] ) {
+            conv.close(randomChoice("YOU_ARE_NORMAL", conv));
+        } else if (conv.user.storage['scores']['red-green'] > conv.user.storage['scores']['total']) {
+            conv.close(randomChoice("YOU_HAVE_RED_GREEN", conv));
+        } else {
+            conv.close(randomChoice("YOU_HAVE_TOTAL", conv));
+        }
     } else if (conv.user.storage['quiz']['red-green'] > conv.user.storage['quiz']['total']) {
         // Probablity of having red-green, so we'll ask a more specific question
         conv.contexts.set('image_question',5);
@@ -175,7 +185,6 @@ function tellAnswer(conv, answer?) {
         conv.contexts.set('image_question', 5);
         conv.ask(randomChoice("WHATS_THIS_IMAGE", conv));
         askImage('q4',conv);
-
     }
 }
 
