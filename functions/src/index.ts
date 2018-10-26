@@ -55,11 +55,11 @@ function randomChoice(s: string,conv, ex?: object) {
 }
 
 function askImage(q: string, conv) {
-    conv.ask("What is in this image? ",new BasicCard({
+    conv.ask(randomChoice("WHATS_THIS_IMAGE", conv),new BasicCard({
         image: new Image({
             url: questions[q]['image-source'],
-            alt: conv.__('img-alt')
-        })
+            alt: conv.__('img-alt'),          
+        }),
     }));
 }
 function askQuestion(conv) {
@@ -81,7 +81,10 @@ function askQuestion(conv) {
 }
 
 function tellAnswer(conv, answer?) {
-    if ()
+    const q = questions[conv.user.storage['quiz']['last_question']];
+    // if (q['question-type'] === 'image') {
+    //     if ()
+    // }
 }
 
 
