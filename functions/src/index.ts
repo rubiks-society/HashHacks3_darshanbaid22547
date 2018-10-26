@@ -194,7 +194,8 @@ app.intent("Default Welcome Intent", (conv) => {
     conv.user.storage['quiz']['scores'] = {
         "creepy": 0,
         "red-green": 0,
-        "total": 0
+        "total": 0,
+        "normal": 0
     };
 
     if (isNewUser) {
