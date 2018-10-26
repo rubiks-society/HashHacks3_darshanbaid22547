@@ -1,0 +1,45 @@
+{
+    "ordinal-1": "first",
+    "ordinal-2": "second",
+    "ordinal-3": "third",
+    "ordinal-4": "fourth",
+    "ordinal-5": "fifth",
+
+    "FIRST_WELCOME-total": 3,
+    "FIRST_WELCOME-1": "Hey! This is Colour doctor. I can tell you about color blindness and we could even do a quick test.",
+    "FIRST_WELCOME-2": "Welcome to your new doc! I specialize in colour blindness and I can perform a real quick color-blindness test.",
+    "FIRST_WELCOME-3": "This is your Colour doctor and I am here to dance with you, I mean help you out by doing a quick color blindness test.",
+
+    "WELCOME_BACK-total": 2,
+    "WELCOME_BACK-1": "Welcome back to your doc. Wanna do another test today?",
+    "WELCOME_BACK-2": "It's great to see you again, let's roll another test! Shall we?",
+
+    "START_QUESTION-total": 1,
+    "START_QUESTION-1": "Ok! Lets begin with the first question.",
+
+    "WHATS_THIS_IMAGE-total": 4,
+    "WHATS_THIS_IMAGE-1": "What's this image?",
+    "WHATS_THIS_IMAGE-2": "What's in this image?",
+    "WHATS_THIS_IMAGE-3": "What are you seeing?",
+    "WHATS_THIS_IMAGE-4": "What's this?",
+
+    "JOKE_ANYONE-total": 2,
+    "JOKE_ANYONE-1": "Well, that could have been guessed by anyone.",
+    "JOKE_ANYONE-2": "Looks like you are joking with me.",
+
+    "JOKE_BYE": 2,
+    "JOKE_BYE-1": "I'll call it goodbye.",
+    "JOKE_BYE-2": "Call me anytime you need me.",
+
+    "YOU_HAVE_RED_GREEN-total": 1,
+    "YOU_HAVE_RED_GREEN-1": "You might have red-green color blindness.",
+
+    "YOU_HAVE_TOTAL-total": 1,
+    "YOU_HAVE_TOTAL-1": "You might have total color blindness.",
+
+    "YOU_ARE_NORMAL-total": 1,
+    "YOU_ARE_NORMAL-1": "You seem normal to me.",
+
+    "BYE": "Good bye!",
+    "img-alt": "What's this image?"
+}
