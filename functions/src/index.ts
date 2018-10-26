@@ -16,7 +16,7 @@ const questions = {
         "question-type": "image",
         "image-source": "https://www.colour-blindness.com/CBTests/ishihara/Plate1.gif",
         "plate-code": 1,
-        "choices": ["12","24","CANT_SAY"],
+        "choices": ["12","24","Nothing"],
         "scores": {
             "12": {
                 "creepy": 0,
@@ -33,7 +33,7 @@ const questions = {
         "question-type": "image",
         "image-source": "https://www.colour-blindness.com/CBTests/ishihara/Plate2.gif",
         "plate-code": 2,
-        "choices": ["8","3","CANT_SAY"],
+        "choices": ["8","3","Nothing"],
         "scores": {
             "8": {
                 "normal": 0.2
@@ -43,7 +43,7 @@ const questions = {
                 "total": 0.1,
                 "normal": -0.1
             },
-            CANT_SAY: {
+            "nothing": {
                 "total": 0.2,
                 "normal": -0.1
             },
@@ -56,12 +56,12 @@ const questions = {
         "question-type": "image",
         "image-source": "https://www.colour-blindness.com/CBTests/ishihara/Plate8.gif",
         "plate-code": 8,
-        "choices": [6,9,3,CANT_SAY],
+        "choices": ["6","9","3","Nothing"],
         "scores": {
             "6": {
                 "normal": 0.2
             },
-            CANT_SAY: {
+            "nothing": {
                 "total": 0.2,
                 "red-green": 0.2,
                 "normal": -0.1
@@ -76,7 +76,7 @@ const questions = {
         "question-type": "image",
         "image-source": "https://www.colour-blindness.com/CBTests/ishihara/Plate2.gif",
         "plate-code": 2,
-        "choices": [8,3,CANT_SAY],
+        "choices": ["8","3","Nothing"],
         "scores": {
             "8": {
                 "normal": 0.2
@@ -86,7 +86,7 @@ const questions = {
                 "total": 0.1,
                 "normal": -0.1
             },
-            CANT_SAY: {
+            "nothing": {
                 "total": 0.2,
                 "normal": -0.1
             },
@@ -119,7 +119,7 @@ function askQuestion(conv) {
         conv.contexts.set('image_question',5);
         conv.user.storage['quiz']['last_question'] = 'q1';
         conv.user.storage['quiz']['last_question_type'] = 'image';
-        conv.user.storage['quiz']['score'] = {
+        conv.user.storage['quiz']['scores'] = {
             "creepy": 0,
             "red-green": 0,
             "total": 0
@@ -143,6 +143,7 @@ function tellAnswer(conv, answer?) {
             // default
             scores = q['scores']['default'];
         }
+        console.log(scores);
         conv.user.storage['quiz']['scores']['creepy'] += (scores['creepy'] | 0);
         conv.user.storage['quiz']['scores']['red-green'] += (scores['red-green'] | 0);
         conv.user.storage['quiz']['scores']['total'] += (scores['total'] | 0);
@@ -194,7 +195,8 @@ app.intent("Default Welcome Intent", (conv) => {
     conv.user.storage['quiz']['scores'] = {
         "creepy": 0,
         "red-green": 0,
-        "total": 0
+        "total": 0,
+        "normal": 0
     };
 
     if (isNewUser) {
@@ -202,6 +204,7 @@ app.intent("Default Welcome Intent", (conv) => {
     } else {
         conv.ask(randomChoice("WELCOME_BACK", conv));
     }
+    conv.ask(new Suggestions("Start Test","Tell me facts"));
 });
 
 app.intent("Start Question", (conv) => {
