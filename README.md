@@ -1,8 +1,9 @@
-# HashHack3.0 
+# HashHack3.0
 
 Team Name: Rubik's Society
 Team Code: darshanbaid22547
 Idea: Color Doctor VUI :see_no_evil:
+
 ## Abstract
 
 Out of 12 male there is atleast 1 color blind person, which means that 5,12,00,000 thats more than the population of Punjab, Harayana and Delhi combined. [Source](http://www.colourblindawareness.org/colour-blindness/) It is rated as a **Very Common** disease in India. [Source](https://g.co/kgs/KLCYmx)
