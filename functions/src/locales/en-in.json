@@ -40,6 +40,15 @@
     "YOU_ARE_NORMAL-total": 1,
     "YOU_ARE_NORMAL-1": "You seem normal to me.",
 
+    "FACT-total": 1,
+    "FACT-1": "Mark Zuckerburg is Color blind.",
+
+    "YES-total": 1,
+    "YES-1": "yes",
+
+    "NO-total": 1,
+    "NO-1": "no",
+
     "BYE": "Good bye!",
     "img-alt": "What's this image?"
 }

@@ -123,7 +123,6 @@ function askQuestion(conv) {
         conv.user.storage['quiz']['total_questions'] = 0;
         conv.ask(randomChoice("WHATS_THIS_IMAGE", conv));
         askImage('q1',conv);
-        
     }
 }
 
@@ -144,6 +143,16 @@ function tellAnswer(conv, answer?) {
         conv.user.storage['quiz']['scores']['red-green'] += (scores['red-green'] || 0);
         conv.user.storage['quiz']['scores']['total'] += (scores['total'] || 0);
         conv.user.storage['quiz']['scores']['normal'] += (scores['normal'] || 0);
+    } else if (q['question-type'] === 'mf') {
+        if (answer === 'male') {
+            conv.user.storage['quiz']['scores']['normal'] -= 0.1;
+            conv.user.storage['quiz']['scores']['red-green'] += 0.2;
+            conv.user.storage['quiz']['scores']['total'] += 0.2;
+        } else if (answer === 'female') {
+            conv.user.storage['quiz']['scores']['normal'] += 0.1;
+            conv.user.storage['quiz']['scores']['red-green'] -= 0.1;
+            conv.user.storage['quiz']['scores']['total'] -= 0.1;
+        }
     }
     console.log(conv.user.storage['quiz']);
     conv.user.storage['quiz']['total_questions'] += 1;
@@ -156,14 +165,14 @@ function tellAnswer(conv, answer?) {
     } else if (conv.user.storage['quiz']['scores']['total'] > 0.7) {
         // The user probably has total color blindnesss
         conv.close(randomChoice("YOU_HAVE_TOTAL", conv));
-    } else if (conv.user.storage['quiz']['scores']['normal'] > 0.7) {
+    } else if (conv.user.storage['quiz']['scores']['normal'] > 0.6) {
         // The user probably is normal
         conv.close(randomChoice("YOU_ARE_NORMAL", conv));
     } else if (conv.user.storage['quiz']['total_questions'] > 5) {
         if (conv.user.storage['quiz']['scores']['normal'] > conv.user.storage['quiz']['scores']['red-green'] && 
         conv.user.storage['quiz']['scores']['normal'] > conv.user.storage['quiz']['scores']['total'] ) {
             conv.close(randomChoice("YOU_ARE_NORMAL", conv));
-        } else if (conv.user.storage['scores']['red-green'] > conv.user.storage['scores']['total']) {
+        } else if (conv.user.storage['quiz']['scores']['red-green'] > conv.user.storage['quiz']['scores']['total']) {
             conv.close(randomChoice("YOU_HAVE_RED_GREEN", conv));
         } else {
             conv.close(randomChoice("YOU_HAVE_TOTAL", conv));
@@ -171,14 +180,20 @@ function tellAnswer(conv, answer?) {
     } else if (conv.user.storage['quiz']['red-green'] > conv.user.storage['quiz']['total']) {
         // Probablity of having red-green, so we'll ask a more specific question
         conv.contexts.set('image_question',5);
+        conv.user.storage['quiz']['last_question'] = 'q2';
+        conv.user.storage['quiz']['total_questions'] += 1;
         conv.ask(randomChoice("WHATS_THIS_IMAGE", conv));
         askImage('q2',conv);
     } else if (conv.user.storage['quiz']['red-green'] > 0.3) {
         conv.contexts.set('image_question',5);
+        conv.user.storage['quiz']['last_question'] = 'q4';
+        conv.user.storage['quiz']['total_questions'] += 1;
         conv.ask(randomChoice("WHATS_THIS_IMAGE", conv));
         askImage('q4',conv);
     } else {
         conv.contexts.set('image_question', 5);
+        conv.user.storage['quiz']['last_question'] = 'q4';
+        conv.user.storage['quiz']['total_questions'] += 1;
         conv.ask(randomChoice("WHATS_THIS_IMAGE", conv));
         askImage('q4',conv);
     }
@@ -220,5 +235,17 @@ app.intent("Start Question", (conv) => {
 app.intent("Image Question", (conv) => {
     const answer = +conv.parameters["number"];
     tellAnswer(conv, answer);
-})
+});
+
+
+app.intent("Image Question - Nothing", (conv) => {
+    const answer = "nothing";
+    tellAnswer(conv, answer);
+});
+
+app.intent("Start Facts", (conv) => {
+    conv.ask(randomChoice("FACT", conv));
+    conv.ask(randomChoice("WANT_ONE_MORE", conv), new Suggestions(randomChoice("YES",conv),randomChoice("NO",conv)));
+});
+
 exports.googleAssistantAction = functions.https.onRequest(app);
