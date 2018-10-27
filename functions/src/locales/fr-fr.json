@@ -6,16 +6,49 @@
     "ordinal-5": "cinquième",
 
     "FIRST_WELCOME-total": 3,
-    "FIRST_WELCOME-1": "Hey! This is Color doc",
-    "FIRST_WELCOME-2": "This is",
-    "FIRST_WELCOME-3": "This is",
+    "FIRST_WELCOME-1": "Hey! C'est médecin de couleur. Je peux vous parler du daltonisme et nous pourrions même faire un test rapide",
+    "FIRST_WELCOME-2": "Bienvenue dans votre nouveau doc! Je suis spécialisé dans le daltonisme et je peux réaliser un véritable test rapide de daltonisme.",
+    "FIRST_WELCOME-3": "Ceci est votre médecin de couleur et je suis ici pour danser avec vous. Je veux dire vous aider en faisant un rapide test de daltonisme",
 
     "WELCOME_BACK-total": 2,
-    "WELCOME_BACK-1": "NOUS SALUONS LE RETOUR",
-    "WELCOME_BACK-2": "WELCOME BACK",
+    "WELCOME_BACK-1": "Bienvenue dans votre doc. Veux faire un autre test aujourd'hui",
+    "WELCOME_BACK-2": "C'est un plaisir de vous revoir, passons un autre test! On y va",
 
     "START_QUESTION-total": 1,
     "START_QUESTION-1": "D'accord! Commençons par la première question.",
 
-    "BYE": "Au revoir!"
+    "WHATS_THIS_IMAGE-total": 4,
+    "WHATS_THIS_IMAGE-1": "Quelle est cette image?",
+    "WHATS_THIS_IMAGE-2": "Qu'y a-t-il dans cette image?",
+    "WHATS_THIS_IMAGE-3": "Que vois-tu?",
+    "WHATS_THIS_IMAGE-4": "Qu'est-ce que c'est ça?",
+
+    "JOKE_ANYONE-total": 2,
+    "JOKE_ANYONE-1": "Eh bien, cela aurait pu être deviné par n'importe qui.",
+    "JOKE_ANYONE-2": "On dirait que tu plaisantes avec moi.",
+
+    "JOKE_BYE": 2,
+    "JOKE_BYE-1": "Je vais l'appeler au revoir.",
+    "JOKE_BYE-2": "Appelle-moi quand tu as besoin de moi.",
+
+    "YOU_HAVE_RED_GREEN-total": 1,
+    "YOU_HAVE_RED_GREEN-1": "Vous pourriez avoir un daltonisme rouge-vert.",
+
+    "YOU_HAVE_TOTAL-total": 1,
+    "YOU_HAVE_TOTAL-1": "Vous pourriez avoir le daltonisme total.",
+
+    "YOU_ARE_NORMAL-total": 1,
+    "YOU_ARE_NORMAL-1": "Vous semblez normal pour moi.",
+
+    "FACT-total": 1,
+    "FACT-1": "Mark Zuckerberg est daltonien.",
+
+    "YES-total": 1,
+    "YES-1": "Oui",
+
+    "NO-total": 1,
+    "NO-1": "non",
+
+    "BYE": "Au revoir!",
+    "img-alt": "What's this image?"
 }
