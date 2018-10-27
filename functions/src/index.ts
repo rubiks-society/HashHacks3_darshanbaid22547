@@ -74,16 +74,15 @@ const questions = {
     },
     "q4": {
         "question-type": "image",
-        "image-source": "https://www.colour-blindness.com/CBTests/ishihara/Plate2.gif",
-        "plate-code": 2,
-        "choices": ["8","3","Nothing"],
+        "image-source": "https://www.colour-blindness.com/CBTests/ishihara/Plate3.gif",
+        "plate-code": 3,
+        "choices": ["29","70","Nothing"],
         "scores": {
-            "8": {
+            "29": {
                 "normal": 0.2
             },
-            "3": {
+            "70": {
                 "red-green": 0.2,
-                "total": 0.1,
                 "normal": -0.1
             },
             "nothing": {
@@ -92,6 +91,45 @@ const questions = {
             },
             "default" : {
                 "creepy": 0.1,
+            }
+        }
+    },
+    "q5": {
+        "question-type": "image",
+        "image-source": "https://www.colour-blindness.com/CBTests/ishihara/Plate10.gif",
+        "plate-code": 10,
+        "choices": ["5","Nothing"],
+        "scores": {
+            "5": {
+                "normal": 0.2
+            },
+            "nothing": {
+                "total": 0.2,
+                "red-green": 0.1,
+                "normal": -0.1
+            },
+            "default" : {
+                "creepy": 0.1,
+            }
+        }
+    },
+    "q6": {
+        "question-type": "image",
+        "image-source": "https://www.colour-blindness.com/CBTests/ishihara/Plate14A.gif",
+        "plate-code": 14,
+        "choices": ["5","Nothing"],
+        "scores": {
+            "5": {
+                "normal": -0.2,
+                "total": +0.2,
+                "red-green": +0.2
+            },
+            "nothing": {
+                "total": -0.2,
+                "normal": +0.1
+            },
+            "default" : {
+                "normal": 0.1,
             }
         }
     },
@@ -124,6 +162,9 @@ function askQuestion(conv) {
         conv.ask(randomChoice("WHATS_THIS_IMAGE", conv));
         askImage('q1',conv);
     }
+}
+function getRandomInt(max) {
+    return Math.floor(Math.random() * Math.floor(max));
 }
 
 function tellAnswer(conv, answer?) {
@@ -180,16 +221,31 @@ function tellAnswer(conv, answer?) {
     } else if (conv.user.storage['quiz']['red-green'] > conv.user.storage['quiz']['total']) {
         // Probablity of having red-green, so we'll ask a more specific question
         conv.contexts.set('image_question',5);
-        conv.user.storage['quiz']['last_question'] = 'q2';
-        conv.user.storage['quiz']['total_questions'] += 1;
-        conv.ask(randomChoice("WHATS_THIS_IMAGE", conv));
-        askImage('q2',conv);
+        if(getRandomInt(3) === 1) {
+            conv.user.storage['quiz']['last_question'] = 'q2';
+            conv.user.storage['quiz']['total_questions'] += 1;
+            conv.ask(randomChoice("WHATS_THIS_IMAGE", conv));
+            askImage('q2',conv);    
+        } else {
+            conv.user.storage['quiz']['last_question'] = 'q4';
+            conv.user.storage['quiz']['total_questions'] += 1;
+            conv.ask(randomChoice("WHATS_THIS_IMAGE", conv));
+            askImage('q4',conv); 
+        }
     } else if (conv.user.storage['quiz']['red-green'] > 0.3) {
         conv.contexts.set('image_question',5);
-        conv.user.storage['quiz']['last_question'] = 'q4';
-        conv.user.storage['quiz']['total_questions'] += 1;
-        conv.ask(randomChoice("WHATS_THIS_IMAGE", conv));
-        askImage('q4',conv);
+        if(getRandomInt(3) === 1) {
+            conv.user.storage['quiz']['last_question'] = 'q4';
+            conv.user.storage['quiz']['total_questions'] += 1;
+            conv.ask(randomChoice("WHATS_THIS_IMAGE", conv));
+            askImage('q4',conv);    
+        } else {
+            conv.user.storage['quiz']['last_question'] = 'q5';
+            conv.user.storage['quiz']['total_questions'] += 1;
+            conv.ask(randomChoice("WHATS_THIS_IMAGE", conv));
+            askImage('q5',conv); 
+        }
+        
     } else {
         conv.contexts.set('image_question', 5);
         conv.user.storage['quiz']['last_question'] = 'q4';
