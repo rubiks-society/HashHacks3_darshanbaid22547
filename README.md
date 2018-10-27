@@ -14,6 +14,6 @@ Normal Vision | Tritanopia Vision
 
 Our aim is to create a simple to use and accessible voice app that could help a person understand if she or he might have color blindness.This app would help in checking colorblindness without the help of any doctor or inventory cutting costs to zero and available anywhere/everywhere.In a country like india where doctor-patient ratio is very low this can be a huge success. The app would be available in English, Hindi and French, making it available to a wide user base.
 Design Flow
-![Source] (https://i.imgur.com/ArAeXdM.png)
+![Source](https://i.imgur.com/ArAeXdM.png)
 Introduction
 Color Doc is an app that utilizes Isihara Plates and Google Assistant's platform to have interactions and detect if the user is colorblind or not
