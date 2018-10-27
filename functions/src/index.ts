@@ -120,11 +120,6 @@ function askQuestion(conv) {
         conv.contexts.set('image_question',5);
         conv.user.storage['quiz']['last_question'] = 'q1';
         conv.user.storage['quiz']['last_question_type'] = 'image';
-        conv.user.storage['quiz']['scores'] = {
-            "creepy": 0,
-            "red-green": 0,
-            "total": 0
-        };
         conv.user.storage['quiz']['total_questions'] = 0;
         conv.ask(randomChoice("WHATS_THIS_IMAGE", conv));
         askImage('q1',conv);
@@ -145,17 +140,16 @@ function tellAnswer(conv, answer?) {
             scores = q['scores']['default'];
         }
         console.log(scores);
-        conv.user.storage['quiz']['scores']['creepy'] += (scores['creepy'] | 0);
-        conv.user.storage['quiz']['scores']['red-green'] += (scores['red-green'] | 0);
-        conv.user.storage['quiz']['scores']['total'] += (scores['total'] | 0);
-        conv.user.storage['quiz']['scores']['normal'] += (scores['normal'] | 0);
+        conv.user.storage['quiz']['scores']['creepy'] += (scores['creepy'] || 0);
+        conv.user.storage['quiz']['scores']['red-green'] += (scores['red-green'] || 0);
+        conv.user.storage['quiz']['scores']['total'] += (scores['total'] || 0);
+        conv.user.storage['quiz']['scores']['normal'] += (scores['normal'] || 0);
     }
     console.log(conv.user.storage['quiz']);
     conv.user.storage['quiz']['total_questions'] += 1;
     if (conv.user.storage['quiz']['scores']['creepy'] > 0.5) {
         // The user is joking, lets end.
         conv.close(randomChoice("JOKE_ANYONE",conv),randomChoice("JOKE_BYE",conv));
-        return;
     } else if (conv.user.storage['quiz']['scores']['red-green'] > 0.7) {
         // The user probably has red-green color blindness
         conv.close(randomChoice("YOU_HAVE_RED_GREEN", conv));
