@@ -6,13 +6,13 @@
     "ordinal-5": "पांचवां",
 
     "FIRST_WELCOME-total": 3,
-    "FIRST_WELCOME-1": "Hey! This is doc",
-    "FIRST_WELCOME-2": "This is",
-    "FIRST_WELCOME-3": "This is",
+    "FIRST_WELCOME-1": "नमस्ते!  मै कलर डॉक्टर हूँ। मै वर्णांधता अथवा रंग अंधापन का जांच क्र सकता हूँ ।",
+    "FIRST_WELCOME-2": "नमस्कार, मै रंगहीनता जांचने का डॉक्टर हूँ!  मै कलर ब्लाइंडनेस अथवा रंगहीनता जाँच सकता हूँ।",
+    "FIRST_WELCOME-3": "नमस्कार,  मै कलर ब्लाइंडनेस अथवा रंगहीनता जाँच सकता हूँ। क्या आप अपना जाँच करवाना चाहेंगे ?",
 
     "WELCOME_BACK-total": 2,
-    "WELCOME_BACK-1": "WELCOME BACK",
-    "WELCOME_BACK-2": "WELCOME BACK",
+    "WELCOME_BACK-1": "नमस्ते ! आपका पुन: स्वागत है।",
+    "WELCOME_BACK-2": "नमस्ते! पुनः पधारने के लिये धन्यवाद ",
 
     "START_QUESTION-total": 1,
     "START_QUESTION-1": "तो चलिये शुरू करते है पहले सवाल से!",
@@ -28,8 +28,8 @@
     "JOKE_ANYONE-2": "इसमें क्या बड़ी बात है ये तोह कोई भी कर लेगा",
 
     "JOKE_BYE": 2,
-    "JOKE_BYE-1": "I'll call it goodbye.",
-    "JOKE_BYE-2": "Call me anytime you need me.",
+    "JOKE_BYE-1": "आपसे मिलकर अच्छा लगा। अच्छा चलता हूँ दुआओ में याद रखना।",
+    "JOKE_BYE-2": "अच्छा लगा आपसे मिल के !",
 
     "YOU_HAVE_RED_GREEN-total": 1,
     "YOU_HAVE_RED_GREEN-1": "आपको लाल हरा रंग का अंधापन हो सकता है।",
@@ -38,5 +38,5 @@
     "YOU_HAVE_TOTAL-1": "आपको कुल रंग अंधापन हो सकता है।",
 
     "BYE": "अलविदा!",
-    "img-alt": "What's this image?"
+    "img-alt": "इस छवि में क्या है?"
 }
